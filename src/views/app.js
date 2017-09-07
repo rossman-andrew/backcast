@@ -16,13 +16,14 @@ var AppView = Backbone.View.extend({
 
     let videos = [];
     let videoListEntries = [];
-    for(let i = 0; i < exampleVideoData.length; i++) {
-      videos.push(new Video(exampleVideoData[i]));
+    for(let i = 0; i < this.videos.length; i++) {
+      videos.push(new Video(this.videos[i]));
       // videoListEntries.push(new VideoListEntryView({ model: videos[i] }));
     }
 
     var videoCollection = new Videos(videos);
     let videoList = new VideoListView({ collection: videoCollection });
+    videoList.render();
     return this;
   },
 
