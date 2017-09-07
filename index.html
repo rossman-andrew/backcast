@@ -30,9 +30,9 @@
 
   <script>
     backboneReady(() => {
-      new AppView(exampleVideoData);
-
-
+      let app = new AppView();
+      app.videos.reset(exampleVideoData);
+      app.render();
     });
   </script>
 

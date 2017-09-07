@@ -1,5 +1,7 @@
 var VideoListEntryView = Backbone.View.extend({
 
+  // el: ".video-list",
+
   tagName: 'div',
 
   initialize: function(vid) {
@@ -8,7 +10,7 @@ var VideoListEntryView = Backbone.View.extend({
   },
 
   events: {
-    'click' : 'selectVideoModel'
+    'click .video-list-entry-title' : 'selectVideoModel'
   },
 
   selectVideoModel: function() {
@@ -16,7 +18,6 @@ var VideoListEntryView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log(this.template);
     this.$el.html(this.template(this.model.attributes));
     return this;
   },
