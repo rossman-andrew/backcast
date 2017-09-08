@@ -11,6 +11,7 @@ var AppView = Backbone.View.extend({
     //   console.log(event);
     //   new VideoPlayerView({ model: event })
     // }, this);
+    this.videos.search();
     this.videos.on('select', function(video) {
       new VideoPlayerView({ model: video });
     } , this);

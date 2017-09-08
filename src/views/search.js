@@ -12,7 +12,6 @@ var SearchView = Backbone.View.extend({
     });
   },
   events: {
-    // '.btn' : 'searchVideos'
   },
   searchVideos: function(e) {
     this.collection.search(this.$el.find('.form-control').val());
