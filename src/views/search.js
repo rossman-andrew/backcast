@@ -5,12 +5,16 @@ var SearchView = Backbone.View.extend({
   initialize: function() {
     //this.videos = new Videos();
     this.render();
+    console.log($('.btn'));
+    $('form').on('submit', (e) => {
+      e.preventDefault();
+      this.searchVideos();
+    });
   },
   events: {
-    'click .btn' : 'searchVideos'
+    // '.btn' : 'searchVideos'
   },
-  searchVideos: function() {
-
+  searchVideos: function(e) {
     this.collection.search(this.$el.find('.form-control').val());
   },
 
