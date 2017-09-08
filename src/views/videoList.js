@@ -7,7 +7,10 @@ var VideoListView = Backbone.View.extend({
     // this.render();
     this.collection.on('sync', this.render, this);
     this.collection.on('reset', function() {
-      this.render();
+      if(this.collection.length > 0) {
+        this.render();
+      }
+
     } , this);
   },
 
